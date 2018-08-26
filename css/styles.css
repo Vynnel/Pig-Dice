@@ -1,3 +1,33 @@
+
+.final-score {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 520px;
+    background-color: #EB4D4D;
+    color: #fff;
+    font-size: 18px;
+    font-family: "Lato";
+    text-align: center;
+    padding: 10px;
+    width: 200px;
+    text-transform: uppercase;
+    cursor: default;
+    border: 1px solid #fff;
+}
+
+.final-score:focus {
+    outline: none;
+}
+
+#dice-1 {
+    top: 225px;
+}
+
+/* #dice-1 { top: 120px; }
+#dice-2 { top: 250px; }
+*/
+
 * {
     margin: 0;
     padding: 0;
@@ -5,49 +35,34 @@
 
 }
 
-.jumbotron {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-bottom: 30px;
-  color: inherit;
-  background-color: #eee;
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
 }
-.jumbotron h1,
-.jumbotron .h1 {
-  color: inherit;
-}
-.jumbotron p {
-  margin-bottom: 15px;
-  font-size: 21px;
-  font-weight: 200;
-}
+
 body {
-    background: #C9FFBF;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #FFAFBD, #C9FFBF);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #FFAFBD, #C9FFBF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS10AAwt8jA07qb1LuM100Ma28b7nRF7XPRXkyCfLFYFLZQhpFiQA);
+    background-size: cover;
+    background-position: center;
     font-family: Lato;
     font-weight: 300;
     position: relative;
     height: 100vh;
-    color: #555;
+    color: #fff;
 }
 
-h3 {text-transform: uppercase;}
-
 .wrapper {
-    width: 1000px;
+    width: 70%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    background-color: #000;
+    box-shadow: 0px 0px 40px 0px #000;
     overflow: hidden;
-}
-
-
-.rules-panel {
-	 line-height: 30px;
+    opacity: 0.7;
+    border-radius: 10px;
 }
 
 .player-0-panel,
@@ -56,6 +71,7 @@ h3 {text-transform: uppercase;}
     float: left;
     height: 600px;
     padding: 100px;
+    background-color: #232221;
 }
 
 
@@ -75,69 +91,52 @@ h3 {text-transform: uppercase;}
     position: relative;
 }
 
-.player-score-0 {
+.player-name:focus {
+    outline: none;
+}
+
+.player-score {
     text-align: center;
     font-size: 80px;
     font-weight: 100;
     color: #EB4D4D;
     margin-bottom: 130px;
+    border-bottom: 1px solid white;
 }
 
-.player-score-1 {
-    text-align: center;
-    font-size: 80px;
-    font-weight: 100;
-    color: #2ecc71;
-    margin-bottom: 130px;
+.active {
+    background-color: #000;
 }
 
-.player-0-rolled-1 {
-	text-align: center;
-	margin-bottom: 10px;
-}
-
-.player-1-rolled-1 {
-	text-align: center;
-	margin-bottom: 10px;
-}
-
-.active-0 { background-color: rgba(255, 175, 189, 0.1) }
-.active-1 { background-color: rgba(46, 204, 113, 0.1) }
-.active-0 .player-name, .active-1 .player-name { font-weight: 300; }
+.active .player-name { font-weight: 300; }
 
 .active .player-name::after {
-    content: "\2022";
-    font-size: 47px;
+    content: "\2039";
+    font-size: 67px;
+    font-weight: bold;
     position: absolute;
     color: #EB4D4D;
-    top: -7px;
+    top: -25px;
     right: 10px;
 
 }
 
-.player-current-box-0 {
+.player-current-box {
     background-color: #EB4D4D;
-    color: #fff;
+    color: #000;
     width: 40%;
     margin: 0 auto;
     padding: 12px;
     text-align: center;
-}
-
-.player-current-box-1 {
-    background-color: #2ecc71;
-    color: #fff;
-    width: 40%;
-    margin: 0 auto;
-    padding: 12px;
-    text-align: center;
+    border-radius: 5px;
+    border: 1px solid white;
 }
 
 .player-current-label {
     text-transform: uppercase;
     margin-bottom: 10px;
     font-size: 12px;
-    color: #222;
+    color: #fff;
 }
 
 .player-current-score {
@@ -168,6 +167,7 @@ button:focus {
 }
 
 i {
+    color: #EB4D4D;
     display: inline-block;
     margin-right: 15px;
     font-size: 32px;
@@ -177,14 +177,18 @@ i {
     transition: margin 0.3s;
 }
 
-.color-0 {color: #EB4D4D;}
-.color-1 {color: #2ecc71;}
-
-.btn-new { top: 105px;}
-.btn-rules { top: 45px;}
-.btn-roll { top: 413px;}
-.btn-back { top: 467px;}
-.btn-hold { top: 477px;}
+.btn-new {
+    top: 45px;
+    color: #000000;
+}
+.btn-roll {
+    top: 403px;
+    color: #75DDDD;
+}
+.btn-hold {
+    top: 467px;
+    color: #7CFFC4;
+}
 
 .dice {
     position: absolute;
@@ -195,10 +199,89 @@ i {
     box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
 }
 
-.winner-0 { background-color: #f7f7f7; }
-.winner .player-name { font-weight: 300; color: #EB4D4D; }
+.winner { background-color: #000; }
+.winner .player-name {
+    font-weight: 300;
+    color: #fff;
+    font-size: 2em;
+}
 
-.winner-0 { background-color: rgba(255, 175, 189, 0.1) }
-.winner-1 { background-color: rgba(46, 204, 113, 0.1) }
-.winner-0 .player-name { font-weight: 300; color: #EB4D4D;}
-.winner-1 .player-name { font-weight: 300; color: #2ecc71;}
+@media screen and (min-width: 801px) and (max-width: 1200px) {
+  .wrapper {
+  width: 100%;
+}
+
+    .clearfix {
+    display: relative;
+    clear: none;
+}
+
+  .player-0-panel,
+.player-1-panel {
+    width: 50%;
+    float: bottom;
+    height: 600px;
+    padding: 100px;
+}
+
+}
+
+@media screen and (min-width: 220px) and (max-width: 800px) {
+   .wrapper {
+    width: 100%;
+}
+
+  .clearfix {
+    display: relative;
+    clear: none;
+}
+
+.player-name {
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+.player-0-panel,
+.player-1-panel {
+    width: 50%;
+    float: left;
+    height: 600px;
+    padding: 100px;
+}
+
+.player-score {
+    font-size: 40px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid white;
+}
+
+.player-current-box {
+    width: 100px;
+    float: right;
+    padding: 12px;
+    margin-right: 15px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+.player-current-label {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.player-current-score {
+    font-size: 30px;
+}
+
+  .active .player-name::after {
+    font-size: 57px;
+    color: #EB4D4D;
+    top: -30px;
+    right: -20px;
+
+}
+
+}

@@ -1,29 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="js/scripts.js"></script>
-  </head>
-  <body>
-    <div class="Jumbotron" >
-      <h1>Dice Roller</h1>
-        <p>Please follow the rules.</p>
-        <p>All of them!</p>
-    </div>
-      <h2>Rules</h2>
-        <ol>
-          <li>Each roll gets a consecutive bonus roll unless a player rolls a 1 or if he holds his/her turn.</li>
-          <li>A hold(quiting while ahead,"for a while") forfeits a bonus roll.</li>
-          <li>If a player rolls a 1,all his points during said rolling round will be negated and the turn passed onto the next player</li>
-          <li></li>
-        </ol>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
+        <link type="text/css" rel="stylesheet" href="style.css">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="css/styles.css" rel="stylesheet" type="text/css">
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="js/scripts.js"></script>
+        <title>Vynnel's Dice Game</title>
+          <img src="images/dice.jpeg">
+    </head>
+      <body>
+          <div class="wrapper clearfix">
+              <div class="player-0-panel active"> <!--active player class-->
+                  <div class="player-name" id="name-0" contenteditable="true">Player 1</div>
+                  <div class="player-score" id="score-0">43</div>
+                  <div class="player-current-box">
+                      <div class="player-current-label">Current</div>
+                      <div class="player-current-score" id="current-0">11</div>
+                  </div>
+              </div>
 
+              <div class="player-1-panel">
+                  <div class="player-name" id="name-1" contenteditable="true">Player 2</div>
+                  <div class="player-score" id="score-1">72</div>
+                  <div class="player-current-box">
+                      <div class="player-current-label">Current</div>
+                      <div class="player-current-score" id="current-1">0</div>
+                  </div>
+              </div>
 
-      </div>
+              <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
+              <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
+              <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
 
-  </body>
+              <button class="final-score">Winning points are 100+</button>
+
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/243004/dice-5.png" alt="Dice" class="dice" id="dice-1">
+          </div>
+
+      </body>
 </html>
