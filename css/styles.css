@@ -1,5 +1,5 @@
 
-.final-score {
+.finalScore {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -16,17 +16,15 @@
     border: 1px solid #fff;
 }
 
-.final-score:focus {
+.finalScore:focus {
     outline: none;
 }
 
-#dice-1 {
+#dice1 {
     top: 225px;
 }
 
-/* #dice-1 { top: 120px; }
-#dice-2 { top: 250px; }
-*/
+
 
 * {
     margin: 0;
@@ -35,7 +33,7 @@
 
 }
 
-.clearfix::after {
+.clearfix:after {
     content: "";
     display: table;
     clear: both;
@@ -236,13 +234,13 @@ i {
     clear: none;
 }
 
-.player-name {
+.playerName {
     font-size: 20px;
     margin-top: 50px;
 }
 
-.player-0-panel,
-.player-1-panel {
+.player1panel,
+.player2panel {
     width: 50%;
     float: left;
     height: 600px;
